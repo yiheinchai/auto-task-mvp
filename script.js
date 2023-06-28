@@ -1,8 +1,9 @@
 async function call_gpt(message) {
+  const api_key = document.querySelector("#key-input");
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Accept", "application/json");
-  myHeaders.append("Authorization", `Bearer <YOUR_API_KEY>`);
+  myHeaders.append("Authorization", `Bearer ${api_key.value.trim()}`);
 
   const raw = JSON.stringify({
     model: "gpt-3.5-turbo",
